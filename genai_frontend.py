@@ -1,7 +1,7 @@
 import streamlit as st
 import genai_backend as demo
 
-st.title("Roshan's Gen AI ChatBot")
+st.title("The More you know, the more you grow!!!")
 
 if 'memory' not in st.session_state:
     st.session_state.memory=demo.demo_memory()
