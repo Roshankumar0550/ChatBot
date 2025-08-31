@@ -2,15 +2,17 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def demo_chatbot():
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyBN-0EmF6dlcbXfpXTnSHOCS7TEdb5jFeg"
+    os.environ['Google_API_KEY']=os.getenv("Google_API_KEY")
     demo_llm = ChatGoogleGenerativeAI(
         model="gemini-1.5-flash-latest",
         temperature=0.0,
         max_tokens=500
-    )
+    )     
     return demo_llm
 
 def demo_memory():
